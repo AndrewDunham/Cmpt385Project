@@ -1,6 +1,6 @@
 # Cmpt385Project
 
-How to add this project to android studio:
+## How to add this project to android studio:
 
 * Open Android Studio
 
@@ -9,3 +9,9 @@ How to add this project to android studio:
 * Then select this project from the drop down or past the URL: https://github.com/AndrewDunham/Cmpt385Project
 * This will then clone the project to your local computer
 * After this is cloned click "Open an Exisiting Project" and open Cmpt285Project
+
+## How to update your work to github
+* after doing some work, on the left side of the screen click "Commit"
+* Select the "Default Changelist" checkbox to select all files that have changed.
+* Then in the "Commit Message" textbox, enter a short message explaining what changes you have made.
+* Click "Commit"
