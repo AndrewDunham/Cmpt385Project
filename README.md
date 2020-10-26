@@ -18,5 +18,3 @@
 * Click the little refresh circle icon to download any new updates on github
 * Click VCS>Git>Push to then upload all of your changes to github.
 
-# Thisisatest
-
