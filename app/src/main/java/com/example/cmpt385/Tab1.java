@@ -14,7 +14,9 @@ import androidx.fragment.app.Fragment;
 
 public class Tab1 extends Fragment {
 
-    public String[] titles = {"Name1","Name2","Name3","Name4","Name5","Name6","Name7","Name8","Name9"};
+    public Tab1(){
+
+    }
 
 
     @Nullable
