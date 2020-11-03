@@ -1,3 +1,18 @@
+/*********************************************************************************
+ * SectionsPagerAdapter
+ *
+ * Description:
+ * This class acts as an adapter for the tab function, and controls fragment interactions
+ *
+ *Team Name: Team 10+10
+ * Authors: Amy Campbell
+ * Date: October 10 2020
+ *
+ * Input: none
+ * Output: none
+ *
+ ********************************************************************************/
+
 package com.example.cmpt385.ui.main;
 
 import android.content.Context;
@@ -14,8 +29,7 @@ import com.example.cmpt385.Tab2;
 import com.example.cmpt385.Tab3;
 
 /**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
+ * A FragmentPagerAdapter that returns a fragment corresponding to one of the tabs
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -28,6 +42,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    /**
+     * getItem() controls fragment interactions, and assigns
+     * @param position of the item
+     */
     @Override
     public Fragment getItem(int position) {
         Fragment fragment = null;
@@ -47,13 +65,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Nullable
     @Override
+    //return corresponding tab title
     public CharSequence getPageTitle(int position) {
         return mContext.getResources().getString(TAB_TITLES[position]);
     }
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
+        // Show 3 total pages.
         return 3;
     }
 }

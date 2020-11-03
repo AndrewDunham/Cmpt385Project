@@ -1,3 +1,18 @@
+/*********************************************************************************
+ * Tab3: Camera
+ *
+ * Description:
+ * This class is responsible for the camera feature
+ *
+ *Team Name: Team 10+10
+ * Authors: Jimmy Kha, Amy Campbell
+ * Date: October 10 2020
+ *
+ * Input: touch input, camera input
+ * Output: none
+ *
+ ********************************************************************************/
+
 package com.example.cmpt385;
 
 import android.Manifest;
@@ -25,24 +40,35 @@ public class Tab3 extends Fragment {
     Button btOpen;
     Activity activity;
     private ImageView imageView;
+
+    //empty constructor
     public Tab3(){
 
     }
 
     @Override
+    /**
+     * set up inflater, get camera permissions
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     */
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //get context from container
         context = container.getContext();
         final View rootView = inflater.inflate(R.layout.fragment3,container,false);
 
 
+        //get id of image and button from View
         imageView = rootView.findViewById(R.id.imageView);
         btOpen = rootView.findViewById(R.id.bt_open);
 
+        //check camera permissions
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, 100);
         }
 
-
+        //create listener for button
         btOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,12 +78,15 @@ public class Tab3 extends Fragment {
             }
         });
 
-
-
-
         return rootView;
     }
 
+    /**
+     * THIS NEEDS A DESCRIPTION
+     * @param requestCode
+     * @param data
+     * @param resultCode
+     */
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
