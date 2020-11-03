@@ -1,3 +1,18 @@
+/*********************************************************************************
+ * Tab1: Search Function
+ *
+ * Description:
+ * This class is responsible for managing the search functionality
+ *
+ *Team Name: Team 10+10
+ * Authors: Amy Campbell
+ * Date: October 10 2020
+ *
+ * Input: none
+ * Output: none
+ *
+ ********************************************************************************/
+
 package com.example.cmpt385;
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,3 +1,17 @@
+/*********************************************************************************
+ * PageViewModel
+ *
+ * Description:
+ * This class acts as the default view model
+ *
+ *
+ * Authors: Android Studio
+ *
+ * Input: none
+ * Output: none
+ *
+ ********************************************************************************/
+
 package com.example.cmpt385.ui.main;
 
 import androidx.arch.core.util.Function;

@@ -1,3 +1,18 @@
+/*********************************************************************************
+ * ImageAdapter
+ *
+ * Description:
+ * This class acts as an adapter for the image gallery
+ *
+ *Team Name: Team 10+10
+ * Authors: Amy Campbell
+ * Date: October 10 2020
+ *
+ * Input: none
+ * Output: none
+ *
+ ********************************************************************************/
+
 package com.example.cmpt385.ui.main;
 import android.content.Context;
 import android.view.View;
@@ -17,6 +32,7 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     @Override
+    //returns length of image list
     public int getCount() {
         return imageList.length;
     }
@@ -32,11 +48,21 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     @Override
+    /**
+     * this method is called to draw each image and scale it
+     * @param position
+     * @param convertView
+     * @param parent acts as a constraint for the child
+     */
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView = new ImageView(context);
+
+        //scale the image
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setLayoutParams(new GridView.LayoutParams(450,450));
         imageView.setPadding(8, 8, 8, 8);
+
+        //set image
         imageView.setImageResource(imageList[position]);
         return imageView;
     }
