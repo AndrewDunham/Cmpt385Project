@@ -18,6 +18,7 @@ package com.example.cmpt385;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -28,12 +29,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Tab3 extends Fragment {
     Context context;
@@ -81,6 +89,33 @@ public class Tab3 extends Fragment {
         return rootView;
     }
 
+    //images get saved to data > data > com.example.cmpt385 > app_imageDir
+    private String saveLocationAlternateTest(Bitmap image){
+
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = timeStamp + ".png";
+        ContextWrapper cw = new ContextWrapper((context.getApplicationContext()));
+        File storageLocation = cw.getDir("imageDir",context.MODE_PRIVATE);
+        File path = new File(storageLocation,imageFileName);
+
+        FileOutputStream outWrite = null;
+        try {
+            outWrite = new FileOutputStream(path);
+            image.compress(Bitmap.CompressFormat.PNG, 100, outWrite);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                outWrite.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+        return storageLocation.getAbsolutePath();
+    }
+
+
     /**
      * THIS NEEDS A DESCRIPTION
      * @param requestCode
@@ -94,6 +129,8 @@ public class Tab3 extends Fragment {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imageView.setImageBitmap(imageBitmap);
+            saveLocationAlternateTest(imageBitmap);
+            //Toast.makeText(context,"Image Saved.",Toast.LENGTH_SHORT).show();
         }
     }
 }
