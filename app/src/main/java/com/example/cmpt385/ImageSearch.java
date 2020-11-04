@@ -22,6 +22,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
+import com.androidnetworking.model.Progress;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -222,5 +223,46 @@ public class ImageSearch extends AppCompatActivity{
         }
     }
 
+    public class JSONDownloader{
+        //Location of Json file
+        private static final String JSON_DATA_URL="asdf";
 
+        private final Context c;
+
+        public JSONDownloader(Context c){
+            this.c = c;
+        }
+
+        //get the JSON data
+        public ArrayList<Image> retrieve (final ListView mListView, final ProgressBar myProgressBar){
+            final ArrayList<Image> downloadedData = new ArrayList<>();
+            myProgressBar.setIndeterminate(true);
+            myProgressBar.setVisibility(View.VISIBLE);
+
+            AndroidNetworking.get(JSON_DATA_URL)
+                    .setPriority(Priority.HIGH)
+                    .build()
+                    .getAsJSONArray(new JSONArrayRequestListener() {
+                        @Override
+                        public void onResponse(JSONArray response) {
+                            JSONObject jo;
+                            Image s;
+                            try {
+                                for (int i=0;i<response.length();i++){
+                                    jo=response.getJSONObject(i);
+                                    int id=jo.getInt("id");
+                                }
+                            }catch (JSONException e){
+
+                            }
+                        }
+
+                        @Override
+                        public void onError(ANError anError) {
+
+                        }
+                    });
+            return downloadedData;
+        }
+    }
 }
