@@ -38,12 +38,8 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 
-public class ImageSearch extends Fragment {
+public class ImageSearch extends AppCompatActivity {
 
-
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment4,container,false);
-    }
     //Setting up the object
     public class Image {
         private int id;
