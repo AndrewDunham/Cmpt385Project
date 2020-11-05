@@ -35,6 +35,7 @@ public class Tab2 extends Fragment {
 
     //list of names
     public String[] titles = {"Name1","Name2","Name3","Name4","Name5","Name6","Name7","Name8","Name9"};
+
     public Tab2(){
 
     }
