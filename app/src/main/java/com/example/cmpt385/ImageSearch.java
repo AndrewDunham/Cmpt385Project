@@ -1,9 +1,13 @@
 package com.example.cmpt385;
 
 //Andrew Dunham with help from https://www.youtube.com/watch?v=xNT1p9b_wks&ab_channel=ProgrammingWizardsTV
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +38,12 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 
-public class ImageSearch extends AppCompatActivity{
+public class ImageSearch extends Fragment {
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment4,container,false);
+    }
     //Setting up the object
     public class Image {
         private int id;
