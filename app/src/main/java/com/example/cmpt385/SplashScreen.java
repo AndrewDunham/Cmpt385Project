@@ -1,3 +1,18 @@
+/*********************************************************************************
+ * MainActivity
+ *
+ * Description:
+ * This class is responsible for displaying a splash screen at the startup
+ *
+ *Team Name: Team 10+10
+ * Authors: Jimmy Kha, Amy Campbell, Andrew Dunham, Terrence Yang
+ * Date: October 10 2020
+ *
+ * Input: none
+ * Output: none
+ *
+ ********************************************************************************/
+
 package com.example.cmpt385;
 
 import androidx.appcompat.app.AppCompatActivity;
